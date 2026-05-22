@@ -1,79 +1,112 @@
-# Shawfin — Creative Designer Portfolio
+# Shawfin Portfolio
 
-A premium, cinematic creative portfolio website built with Next.js 15, Framer Motion, and Tailwind CSS v4.
+A premium portfolio website built with Next.js, TypeScript, Tailwind CSS v4, and Framer Motion.
 
-## Tech Stack
+This project focuses on a cinematic but restrained UI language with:
 
-- **Framework**: Next.js 15 (App Router, Turbopack)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **Animations**: Framer Motion 12
-- **Smooth Scroll**: Lenis
-- **Icons**: Lucide React
-- **Theme**: Dark/Light with CSS variables
+- layered backgrounds and soft depth
+- glass surfaces and subtle motion
+- custom brand logo system
+- dark and light theme support
 
-## Getting Started
+## Stack
 
-```bash
-# Install dependencies
+- Next.js 15 (App Router + Turbopack)
+- React 19
+- TypeScript 5
+- Tailwind CSS v4
+- Framer Motion 12
+- Lenis smooth scrolling
+- Lucide React icons
+
+## Fonts and Branding
+
+Configured in src/app/layout.tsx:
+
+- Space Grotesk
+- Inter
+- Ubuntu
+- Josefin Sans
+
+Brand logo component:
+
+- src/components/ui/BrandLogo.tsx
+
+Usage pattern:
+
+- Header and footer use full logo (Shawfin.brand)
+- Hero uses plain text Shawfin
+
+## Run Locally
+
+1. Install dependencies
+
 npm install
 
-# Start development server
+2. Start development server
+
 npm run dev
 
-# Build for production
+3. Build production bundle
+
 npm run build
 
-# Start production server
-npm start
-```
+4. Start production server
 
-Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
+npm start
+
+Local URL:
+
+http://localhost:3000
+
+## Available Scripts
+
+- npm run dev
+- npm run build
+- npm run start
+- npm run lint
 
 ## Project Structure
 
-```
 src/
-├── app/
-│   ├── globals.css          # Global styles + CSS variables
-│   ├── layout.tsx           # Root layout with providers
-│   └── page.tsx             # Homepage (assembles all sections)
-├── components/
-│   ├── effects/
-│   │   └── MouseGlow.tsx    # Cursor glow effect
-│   ├── layout/
-│   │   └── Navbar.tsx       # Navigation with theme toggle
-│   ├── providers/
-│   │   ├── ThemeProvider.tsx       # Dark/light theme
-│   │   └── SmoothScrollProvider.tsx # Lenis smooth scroll
-│   └── sections/
-│       ├── HeroSection.tsx         # Cinematic hero with parallax
-│       ├── ContentsShowcase.tsx    # Expanding category pillars
-│       ├── AboutSection.tsx        # Editorial about layout
-│       ├── ProjectsSection.tsx     # Case study cards
-│       ├── SkillsSection.tsx       # Filterable skill pills
-│       ├── TestimonialsSection.tsx # Glass testimonial cards
-│       ├── ClientsSection.tsx      # Animated marquee
-│       └── ContactSection.tsx      # Contact form + socials
-├── hooks/
-│   └── useScrollReveal.ts   # Intersection Observer hook
-└── lib/
-    ├── constants.ts         # Site-wide constants
-    ├── motion.ts            # Reusable Framer Motion variants
-    └── utils.ts             # Utility functions (cn)
-```
+    app/
+        globals.css
+        layout.tsx
+        page.tsx
+    components/
+        effects/
+            MouseGlow.tsx
+        layout/
+            Navbar.tsx
+        providers/
+            SmoothScrollProvider.tsx
+            ThemeProvider.tsx
+        sections/
+            AboutSection.tsx
+            ClientsSection.tsx
+            ContactSection.tsx
+            ContentsShowcase.tsx
+            HeroSection.tsx
+            ProjectsSection.tsx
+            SkillsSection.tsx
+            TestimonialsSection.tsx
+        ui/
+            BrandLogo.tsx
+    hooks/
+        useScrollReveal.ts
+    lib/
+        constants.ts
+        motion.ts
+        utils.ts
 
-## Customization
+## Theming
 
-- **Colors**: Edit CSS variables in `src/app/globals.css`
-- **Content**: Update text/data directly in each section component
-- **Fonts**: Change in `src/app/layout.tsx`
-- **Projects**: Add/edit project data in `src/components/sections/ProjectsSection.tsx`
+Theme variables are defined in src/app/globals.css.
+
+Dark and light modes are managed through the ThemeProvider in src/components/providers/ThemeProvider.tsx.
 
 ## Deploy
 
-Deploy instantly on [Vercel](https://vercel.com):
+Recommended deployment: Vercel
 
-```bash
 npx vercel
-```
