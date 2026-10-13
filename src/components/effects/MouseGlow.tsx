@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function MouseGlow() {
+  const [isEnabled, setIsEnabled] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -14,6 +15,10 @@ export default function MouseGlow() {
   const yInner = useSpring(useTransform(mouseY, (v) => v + 120), springConfig);
 
   useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const finePointer = window.matchMedia("(pointer: fine)");
+    if (reduced.matches || !finePointer.matches) return;
+    setIsEnabled(true);
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX - 200);
       mouseY.set(e.clientY - 200);
@@ -21,6 +26,8 @@ export default function MouseGlow() {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
+
+  if (!isEnabled) return null;
 
   return (
     <>
@@ -30,8 +37,8 @@ export default function MouseGlow() {
           x,
           y,
           background:
-            "radial-gradient(circle at center, rgba(192,0,255,0.1) 0%, rgba(123,45,255,0.05) 34%, transparent 72%)",
-          mixBlendMode: "screen",
+            "radial-gradient(circle at center, rgba(183,138,78,0.1) 0%, rgba(148,43,43,0.05) 34%, transparent 72%)",
+          mixBlendMode: "soft-light",
         }}
         aria-hidden="true"
       />

@@ -13,7 +13,7 @@ const projects = [
     summary: "Identity, packaging, and campaign language for a niche fragrance launch.",
     year: "2025",
     tags: ["Identity", "Packaging", "Campaign"],
-    accent: "#c000ff",
+    accent: "#B78A4E",
     image:
       "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1200&q=80",
   },
@@ -24,7 +24,7 @@ const projects = [
     summary: "Immersive lookbook commerce experience with editorial pacing and premium transitions.",
     year: "2025",
     tags: ["UI/UX", "Web", "Motion"],
-    accent: "#9b00cc",
+    accent: "#B78A4E",
     image:
       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80",
   },
@@ -35,7 +35,7 @@ const projects = [
     summary: "Stage, digital, and social visuals built from one expressive visual system.",
     year: "2024",
     tags: ["Direction", "Print", "Social"],
-    accent: "#7b2dff",
+    accent: "#942B2B",
     image:
       "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
   },
@@ -46,7 +46,7 @@ const projects = [
     summary: "A calm, tactile mobile interface balancing conversion goals with emotional clarity.",
     year: "2024",
     tags: ["Mobile", "UX", "Prototype"],
-    accent: "#a000ee",
+    accent: "#942B2B",
     image:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80",
   },
@@ -57,7 +57,7 @@ const projects = [
     summary: "Collectible can and bottle architecture with cinematic shelf presence.",
     year: "2024",
     tags: ["Packaging", "Brand", "Print"],
-    accent: "#8800bb",
+    accent: "#4D1211",
     image:
       "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=1200&q=80",
   },
@@ -68,7 +68,7 @@ const projects = [
     summary: "Performance-first short-form visuals with strong rhythm and visual recall.",
     year: "2025",
     tags: ["Motion", "Campaign", "Reels"],
-    accent: "#c000ff",
+    accent: "#B78A4E",
     image:
       "https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?auto=format&fit=crop&w=1200&q=80",
   },
@@ -83,7 +83,7 @@ export default function ProjectsSection() {
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
           className="absolute -top-12 left-1/2 -translate-x-1/2 w-[700px] h-[360px] ambient-orb"
-          style={{ background: "radial-gradient(ellipse, rgba(192,0,255,0.08) 0%, transparent 68%)" }}
+          style={{ background: "radial-gradient(ellipse, rgba(183,138,78,0.08) 0%, transparent 68%)" }}
         />
       </div>
 
@@ -92,7 +92,7 @@ export default function ProjectsSection() {
           <div>
             <motion.p
               className="text-xs tracking-[0.3em] uppercase mb-4"
-              style={{ color: "#c000ff" }}
+              style={{ color: "#B78A4E" }}
               initial={{ opacity: 0 }}
               animate={isVisible ? { opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
@@ -122,15 +122,15 @@ export default function ProjectsSection() {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 [perspective:1200px]">
+        <div className="editorial-project-grid grid md:grid-cols-2 gap-5 md:gap-7 [perspective:1200px]">
           {projects.map((project, i) => {
             const active = hoveredId === project.id;
 
             return (
               <motion.article
                 key={project.id}
-                className="group relative rounded-3xl overflow-hidden cursor-pointer depth-card"
-                style={{ aspectRatio: i % 3 === 0 ? "4 / 4.3" : "4 / 5", border: "1px solid rgba(255,255,255,0.35)" }}
+                className="group relative rounded-[28px] overflow-hidden depth-card editorial-project-card"
+                style={{ aspectRatio: i % 3 === 0 ? "4 / 4.3" : "4 / 5", border: "1px solid var(--card-border)" }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.65, delay: i * 0.08 }}
@@ -159,7 +159,7 @@ export default function ProjectsSection() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(140deg, rgba(192,0,255,0.28), rgba(192,0,255,0) 40%, rgba(123,45,255,0.2) 100%)",
+                      "linear-gradient(140deg, rgba(183,138,78,0.28), rgba(183,138,78,0) 40%, rgba(148,43,43,0.2) 100%)",
                     opacity: active ? 0.95 : 0.68,
                     transition: "opacity 0.45s ease",
                   }}
@@ -212,8 +212,8 @@ export default function ProjectsSection() {
         >
           <motion.button
             className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-sm cursor-pointer glass-premium neuro-soft"
-            style={{ color: "#c000ff" }}
-            whileHover={{ y: -2, boxShadow: "0 14px 36px rgba(192,0,255,0.2)" }}
+            style={{ color: "#B78A4E" }}
+            whileHover={{ y: -2, boxShadow: "0 14px 36px rgba(183,138,78,0.2)" }}
             whileTap={{ scale: 0.98 }}
           >
             View All Projects

@@ -5,13 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import BrandLogo from "@/components/ui/BrandLogo";
 import { Sun, Moon, Menu, X } from "lucide-react";
+import { NAV_LINKS } from "@/lib/constants";
 
-const navLinks = [
-  { label: "Work", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
+const navLinks = NAV_LINKS;
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -33,18 +29,18 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
+        className="editorial-navbar fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
         <div
           className={`
-            max-w-7xl mx-auto flex items-center justify-between
-            rounded-2xl px-6 py-3 transition-all duration-500
+            max-w-[1440px] mx-auto flex items-center justify-between
+            rounded-full px-5 sm:px-8 py-3 transition-all duration-500
             ${
               scrolled
-                ? "glass-premium border border-white/20 depth-card"
+                ? "editorial-nav-scrolled glass-premium depth-card"
                 : "bg-transparent"
             }
           `}
@@ -63,7 +59,7 @@ export default function Navbar() {
           </motion.a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7 editorial-nav-links">
             {navLinks.map((link) => (
               <button
                 key={link.label}
@@ -86,7 +82,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <motion.button
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-xl flex items-center justify-center transition-colors duration-200 cursor-pointer neuro-soft"
+              className="w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer neuro-soft"
               style={{
                 background: "var(--glass-surface)",
                 border: "1px solid var(--card-border)",
@@ -101,12 +97,12 @@ export default function Navbar() {
 
             <motion.a
               href="#contact"
-              className="hidden md:flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white cursor-pointer gradient-sweep"
+              className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white cursor-pointer gradient-sweep editorial-nav-cta"
               style={{
-                background: "linear-gradient(135deg, #c000ff, #7b00d4)",
-                boxShadow: "0 10px 35px rgba(192, 0, 255, 0.28)",
+                background: "linear-gradient(135deg, #B78A4E, #4D1211)",
+                boxShadow: "0 10px 35px rgba(183,138,78, 0.28)",
               }}
-              whileHover={{ scale: 1.03, y: -1, boxShadow: "0 14px 44px rgba(192,0,255,0.36)" }}
+              whileHover={{ scale: 1.03, y: -1, boxShadow: "0 14px 44px rgba(183,138,78,0.36)" }}
               whileTap={{ scale: 0.97 }}
               onClick={(e) => {
                 e.preventDefault();
@@ -118,7 +114,7 @@ export default function Navbar() {
 
             {/* Mobile menu toggle */}
             <button
-              className="md:hidden w-9 h-9 rounded-xl flex items-center justify-center cursor-pointer"
+              className="md:hidden w-9 h-9 rounded-full flex items-center justify-center cursor-pointer"
               style={{
                 background: "var(--glass-surface)",
                 border: "1px solid var(--card-border)",
@@ -145,11 +141,11 @@ export default function Navbar() {
           >
             <div
               className="absolute inset-0"
-              style={{ background: "rgba(0,0,0,0.8)", backdropFilter: "blur(20px)" }}
+              style={{ background: "rgba(38,38,38,0.86)", backdropFilter: "blur(20px)" }}
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
-              className="absolute top-20 left-4 right-4 rounded-2xl p-8 glass-premium"
+              className="absolute top-20 left-4 right-4 rounded-[28px] p-8 glass-premium editorial-mobile-menu"
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -172,7 +168,7 @@ export default function Navbar() {
                 <motion.button
                   onClick={() => handleNavClick("#contact")}
                   className="mt-4 py-4 rounded-xl text-white font-semibold cursor-pointer"
-                  style={{ background: "linear-gradient(135deg, #c000ff, #7b00d4)" }}
+                  style={{ background: "linear-gradient(135deg, #B78A4E, #4D1211)" }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}

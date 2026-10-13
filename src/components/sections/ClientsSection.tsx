@@ -111,15 +111,15 @@ function ClientLogo({ name }: { name: string; reversed?: boolean }) {
         minWidth: "180px",
       }}
       whileHover={{
-        borderColor: "rgba(192,0,255,0.4)",
-        boxShadow: "0 0 20px rgba(192,0,255,0.12)",
+        borderColor: "rgba(183,138,78,0.4)",
+        boxShadow: "0 0 20px rgba(183,138,78,0.12)",
       }}
     >
       <span
         className="font-bold text-sm tracking-wider uppercase transition-colors duration-300"
         style={{ color: "var(--muted)" }}
         onMouseEnter={(e) => {
-          (e.target as HTMLElement).style.color = "#c000ff";
+          (e.target as HTMLElement).style.color = "#B78A4E";
         }}
         onMouseLeave={(e) => {
           (e.target as HTMLElement).style.color = "var(--muted)";

@@ -9,7 +9,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="portfolio-page relative overflow-hidden">
       <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
         <div className="mesh-bg" />
         <div className="grain-overlay" />

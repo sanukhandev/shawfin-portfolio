@@ -13,7 +13,7 @@ const testimonials = [
     author: "Alexandra Chen",
     role: "Creative Director",
     company: "Nova Studio",
-    accent: "#c000ff",
+    accent: "#B78A4E",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const testimonials = [
     author: "Marcus Webb",
     role: "Marketing Lead",
     company: "Zenith Labs",
-    accent: "#9b00cc",
+    accent: "#B78A4E",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const testimonials = [
     author: "Priya Nair",
     role: "Founder",
     company: "Aether Fashion",
-    accent: "#7b2dff",
+    accent: "#942B2B",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const testimonials = [
     author: "Jordan Okafor",
     role: "Brand Manager",
     company: "Orion Media",
-    accent: "#a000ee",
+    accent: "#942B2B",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[560px] ambient-orb"
-          style={{ background: "radial-gradient(circle, rgba(192,0,255,0.1) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(183,138,78,0.1) 0%, transparent 70%)" }}
         />
       </div>
 
@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
         <div ref={ref} className="text-center mb-16">
           <motion.p
             className="text-xs tracking-[0.3em] uppercase mb-4"
-            style={{ color: "#c000ff" }}
+            style={{ color: "#B78A4E" }}
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
@@ -122,7 +122,7 @@ export default function TestimonialsSection() {
               <div
                 className="w-12 h-12 rounded-2xl flex items-center justify-center font-black"
                 style={{
-                  background: `linear-gradient(135deg, ${testimonials[active].accent}, rgba(123,45,255,0.55))`,
+                  background: `linear-gradient(135deg, ${testimonials[active].accent}, rgba(148,43,43,0.55))`,
                   color: "white",
                 }}
               >
@@ -149,7 +149,7 @@ export default function TestimonialsSection() {
               style={{
                 width: active === i ? "34px" : "9px",
                 height: "9px",
-                background: active === i ? "linear-gradient(90deg, #c000ff, #7b2dff)" : "rgba(192,0,255,0.2)",
+                background: active === i ? "linear-gradient(90deg, #B78A4E, #942B2B)" : "rgba(183,138,78,0.2)",
               }}
               aria-label={`Testimonial ${i + 1}`}
             />

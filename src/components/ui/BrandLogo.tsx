@@ -24,9 +24,9 @@ export default function BrandLogo({
     >
       <defs>
         <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#C000FF" />
-          <stop offset="50%" stopColor="#E056FD" />
-          <stop offset="100%" stopColor="#7B2DFF" />
+          <stop offset="0%" stopColor="#B78A4E" />
+          <stop offset="50%" stopColor="#CBB291" />
+          <stop offset="100%" stopColor="#942B2B" />
         </linearGradient>
       </defs>
 
@@ -51,7 +51,7 @@ export default function BrandLogo({
           fontSize="18"
           fontWeight="500"
           letterSpacing="-0.4"
-          fill="#C000FF"
+          fill="#CBB291"
           opacity="0.9"
           style={{
             fontFamily:
