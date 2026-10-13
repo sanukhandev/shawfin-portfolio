@@ -1,43 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter, Ubuntu, Josefin_Sans, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import Navbar from "@/components/layout/Navbar";
 import MouseGlow from "@/components/effects/MouseGlow";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const ubuntu = Ubuntu({
-  subsets: ["latin"],
-  variable: "--font-ubuntu",
-  display: "swap",
-  weight: ["400", "500", "700"],
-});
-
-const josefinSans = Josefin_Sans({
-  subsets: ["latin"],
-  variable: "--font-josefin-sans",
-  display: "swap",
-  weight: ["400", "500", "700"],
-});
-
-const dancingScript = Dancing_Script({
-  subsets: ["latin"],
-  variable: "--font-dancing-script",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Shawfin — Creative Designer & Art Director",
@@ -79,10 +45,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${spaceGrotesk.variable} ${inter.variable} ${ubuntu.variable} ${josefinSans.variable} ${dancingScript.variable} antialiased`}
-        suppressHydrationWarning
-      >
+      <head>
+        {/* Load Google Fonts in the browser, not during next build.
+            Vercel's next/font Google CSS parser can fail at build time.
+            display=swap and CSS fallback fonts keep content readable. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@400..900&family=Space+Grotesk:wght@400..700&display=swap"
+        />
+      </head>
+      <body className="antialiased" suppressHydrationWarning>
         <ThemeProvider>
           <SmoothScrollProvider>
             <Navbar />
