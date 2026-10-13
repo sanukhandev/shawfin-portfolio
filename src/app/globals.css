@@ -160,6 +160,11 @@
   display: inline-block;
 }
 
+/* Handwritten wordmark: keeps the name and .design seamlessly connected. */
+.editorial-navbar svg[role="img"],
+.editorial-contact-grid svg[role="img"] {
+  flex-shrink: 0;
+}
 /* NAV */
 .editorial-navbar { font-family: var(--font-space-grotesk), sans-serif; }
 .editorial-navbar > div {

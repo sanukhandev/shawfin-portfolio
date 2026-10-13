@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import BrandLogo from "@/components/ui/BrandLogo";
-import { Send, Mail, Instagram, Linkedin, ExternalLink } from "lucide-react";
+import { Send, Mail, Instagram, Linkedin, ExternalLink, Heart } from "lucide-react";
 
 const socialLinks = [
   { icon: Mail, label: "Email", href: "mailto:hello@shawfin.design", handle: "hello@shawfin.design" },
@@ -243,8 +243,18 @@ export default function ContactSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <BrandLogo className="h-8 w-[150px] sm:w-[180px]" />
-          <p className="text-xs" style={{ color: "var(--muted)" }}>
-            © 2026 Shawfin. Designed with cinematic restraint.
+          <p
+            className="text-xs inline-flex items-center justify-center gap-1.5"
+            style={{ color: "var(--muted)" }}
+          >
+            <span>Made with</span>
+            <Heart
+              size={13}
+              fill="currentColor"
+              aria-label="love"
+              style={{ color: "#942B2B" }}
+            />
+            <span>by Sanu Khan © 2026</span>
           </p>
           <p className="text-xs" style={{ color: "var(--muted)" }}>
             Creative Designer and Art Director
