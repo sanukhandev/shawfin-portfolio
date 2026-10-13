@@ -9,7 +9,7 @@ const categories = [
     id: "branding",
     label: "Branding",
     description: "Identity systems crafted for recall, consistency, and premium perception.",
-    accent: "#c000ff",
+    accent: "#B78A4E",
     image:
       "https://images.unsplash.com/photo-1620674156044-52b714665d46?auto=format&fit=crop&w=900&q=80",
   },
@@ -17,7 +17,7 @@ const categories = [
     id: "packaging",
     label: "Packaging",
     description: "Packaging directions designed like collectible objects with tactile narrative.",
-    accent: "#9b00cc",
+    accent: "#B78A4E",
     image:
       "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?auto=format&fit=crop&w=900&q=80",
   },
@@ -25,7 +25,7 @@ const categories = [
     id: "uiux",
     label: "UI / UX",
     description: "Interfaces with elegant hierarchy, motion rhythm, and measurable conversion focus.",
-    accent: "#7b2dff",
+    accent: "#942B2B",
     image:
       "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=900&q=80",
   },
@@ -33,7 +33,7 @@ const categories = [
     id: "motion",
     label: "Motion",
     description: "Cinematic loops and transition systems that make campaigns feel alive.",
-    accent: "#a000ee",
+    accent: "#942B2B",
     image:
       "https://images.unsplash.com/photo-1604871000636-074fa5117945?auto=format&fit=crop&w=900&q=80",
   },
@@ -41,7 +41,7 @@ const categories = [
     id: "art",
     label: "Art Direction",
     description: "Concept-first visual worlds across digital, print, social, and launch moments.",
-    accent: "#8800bb",
+    accent: "#4D1211",
     image:
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80",
   },
@@ -52,18 +52,18 @@ export default function ContentsShowcase() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden" style={{ background: "var(--background)" }}>
+    <section id="showcase" className="relative py-24 px-6 overflow-hidden" style={{ background: "var(--background)" }}>
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
           className="absolute -top-20 right-0 w-[420px] h-[420px] ambient-orb"
-          style={{ background: "radial-gradient(circle, rgba(192,0,255,0.12) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(183,138,78,0.12) 0%, transparent 70%)" }}
         />
       </div>
 
       <div ref={ref} className="max-w-7xl mx-auto mb-14">
         <motion.p
           className="text-xs tracking-[0.3em] uppercase mb-4 text-center md:text-left"
-          style={{ color: "#c000ff" }}
+          style={{ color: "#B78A4E" }}
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
@@ -84,7 +84,7 @@ export default function ContentsShowcase() {
       </div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="hidden md:flex gap-3 h-[560px]">
+        <div className="hidden md:flex gap-4 h-[560px] editorial-capsules">
           {categories.map((cat, i) => {
             const isActive = hovered === cat.id;
             const hasHovered = hovered !== null;
@@ -126,7 +126,7 @@ export default function ContentsShowcase() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(150deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0) 34%, rgba(192,0,255,0.24) 100%)",
+                      "linear-gradient(150deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0) 34%, rgba(183,138,78,0.24) 100%)",
                     opacity: isActive ? 0.95 : 0.55,
                     transition: "opacity 0.5s ease",
                   }}

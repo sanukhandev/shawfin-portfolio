@@ -40,9 +40,9 @@ const skillGroups = [
 ];
 
 const levelColors: Record<string, string> = {
-  Expert: "#c000ff",
-  Advanced: "#9b00cc",
-  Intermediate: "#7b2dff",
+  Expert: "#B78A4E",
+  Advanced: "#B78A4E",
+  Intermediate: "#942B2B",
 };
 
 export default function SkillsSection() {
@@ -56,7 +56,7 @@ export default function SkillsSection() {
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
           className="absolute left-0 top-1/3 w-[420px] h-[420px] ambient-orb"
-          style={{ background: "radial-gradient(circle, rgba(192,0,255,0.1) 0%, transparent 68%)" }}
+          style={{ background: "radial-gradient(circle, rgba(183,138,78,0.1) 0%, transparent 68%)" }}
         />
       </div>
 
@@ -64,7 +64,7 @@ export default function SkillsSection() {
         <div ref={ref} className="mb-14 text-center">
           <motion.p
             className="text-xs tracking-[0.3em] uppercase mb-4"
-            style={{ color: "#c000ff" }}
+            style={{ color: "#B78A4E" }}
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
@@ -99,13 +99,13 @@ export default function SkillsSection() {
                 color: activeGroup === group.id ? "white" : "var(--muted)",
                 background:
                   activeGroup === group.id
-                    ? "linear-gradient(135deg, #c000ff, #7b2dff)"
+                    ? "linear-gradient(135deg, #B78A4E, #942B2B)"
                     : "var(--glass-surface)",
                 border:
                   activeGroup === group.id
                     ? "1px solid transparent"
                     : "1px solid var(--card-border)",
-                boxShadow: activeGroup === group.id ? "0 12px 34px rgba(192,0,255,0.22)" : "none",
+                boxShadow: activeGroup === group.id ? "0 12px 34px rgba(183,138,78,0.22)" : "none",
               }}
             >
               {group.label}

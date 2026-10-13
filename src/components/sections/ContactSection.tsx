@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import BrandLogo from "@/components/ui/BrandLogo";
 import { Send, Mail, Instagram, Linkedin, ExternalLink } from "lucide-react";
 
 const socialLinks = [
@@ -33,7 +32,7 @@ export default function ContactSection() {
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[820px] h-[420px] ambient-orb"
-          style={{ background: "radial-gradient(ellipse, rgba(192,0,255,0.14) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse, rgba(183,138,78,0.14) 0%, transparent 70%)" }}
         />
       </div>
 
@@ -41,7 +40,7 @@ export default function ContactSection() {
         <div ref={ref} className="mb-20 max-w-4xl">
           <motion.p
             className="text-xs tracking-[0.3em] uppercase mb-6"
-            style={{ color: "#c000ff" }}
+            style={{ color: "#B78A4E" }}
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
@@ -61,7 +60,7 @@ export default function ContactSection() {
           </motion.h2>
         </div>
 
-        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-16 items-start editorial-contact-grid">
           <motion.aside
             initial={{ opacity: 0, x: -28 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
@@ -81,16 +80,16 @@ export default function ContactSection() {
                   initial={{ opacity: 0, x: -14 }}
                   animate={isVisible ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.24 + i * 0.08 }}
-                  whileHover={{ x: 5, boxShadow: "0 16px 34px rgba(192,0,255,0.14)" }}
+                  whileHover={{ x: 5, boxShadow: "0 16px 34px rgba(183,138,78,0.14)" }}
                 >
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center"
                     style={{
-                      background: "rgba(192,0,255,0.12)",
-                      border: "1px solid rgba(192,0,255,0.28)",
+                      background: "rgba(183,138,78,0.12)",
+                      border: "1px solid rgba(183,138,78,0.28)",
                     }}
                   >
-                    <link.icon size={16} style={{ color: "#c000ff" }} />
+                    <link.icon size={16} style={{ color: "#B78A4E" }} />
                   </div>
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.2em]" style={{ color: "var(--muted)" }}>
@@ -106,7 +105,7 @@ export default function ContactSection() {
           </motion.aside>
 
           <motion.div
-            className="rounded-[34px] p-6 sm:p-8 glass-premium depth-card"
+            className="rounded-[28px] p-6 sm:p-8 glass-premium depth-card editorial-contact-panel"
             initial={{ opacity: 0, x: 28 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.22 }}
@@ -119,7 +118,7 @@ export default function ContactSection() {
               >
                 <motion.div
                   className="w-20 h-20 rounded-full flex items-center justify-center mb-6"
-                  style={{ background: "linear-gradient(135deg, #c000ff, #7b2dff)" }}
+                  style={{ background: "linear-gradient(135deg, #B78A4E, #942B2B)" }}
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", delay: 0.2 }}
@@ -221,10 +220,10 @@ export default function ContactSection() {
                   disabled={sending}
                   className="w-full flex items-center justify-center gap-3 py-4 rounded-2xl font-semibold text-sm text-white cursor-pointer disabled:opacity-70 gradient-sweep"
                   style={{
-                    background: "linear-gradient(135deg, #c000ff 0%, #7b2dff 100%)",
-                    boxShadow: "0 16px 42px rgba(192,0,255,0.3)",
+                    background: "linear-gradient(135deg, #B78A4E 0%, #942B2B 100%)",
+                    boxShadow: "0 16px 42px rgba(183,138,78,0.3)",
                   }}
-                  whileHover={{ y: -1, boxShadow: "0 20px 50px rgba(192,0,255,0.4)" }}
+                  whileHover={{ y: -1, boxShadow: "0 20px 50px rgba(183,138,78,0.4)" }}
                   whileTap={{ scale: 0.98 }}
                 >
                   {sending ? "Sending..." : "Send Message"}
@@ -235,21 +234,7 @@ export default function ContactSection() {
           </motion.div>
         </div>
 
-        <motion.div
-          className="mt-24 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: "1px solid var(--card-border)" }}
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <BrandLogo className="h-8 w-[150px] sm:w-[180px]" />
-          <p className="text-xs" style={{ color: "var(--muted)" }}>
-            © 2026 Shawfin. Designed with cinematic restraint.
-          </p>
-          <p className="text-xs" style={{ color: "var(--muted)" }}>
-            Creative Designer and Art Director
-          </p>
-        </motion.div>
+
       </div>
     </section>
   );

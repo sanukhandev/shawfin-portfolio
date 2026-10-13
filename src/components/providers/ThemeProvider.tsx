@@ -16,15 +16,13 @@ const ThemeContext = createContext<ThemeContextValue>({
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem("shawfin-theme") as Theme | null;
-    const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    const initial = stored ?? preferred;
+    const stored = localStorage.getItem("shawfin-theme");
+    const preferred: Theme = window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
+    const initial: Theme = stored === "dark" || stored === "light" ? stored : preferred;
     setTheme(initial);
     document.documentElement.setAttribute("data-theme", initial);
   }, []);
@@ -36,17 +34,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("shawfin-theme", next);
   };
 
-  if (!mounted) {
-    return (
-      <div data-theme="dark" style={{ visibility: "hidden" }}>
-        {children}
-      </div>
-    );
-  }
-
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div data-theme={theme}>{children}</div>
+      {children}
     </ThemeContext.Provider>
   );
 }

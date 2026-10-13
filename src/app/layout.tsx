@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter, Ubuntu, Josefin_Sans } from "next/font/google";
+import { Space_Grotesk, Inter, Ubuntu, Josefin_Sans, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
@@ -30,6 +30,13 @@ const josefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
   display: "swap",
   weight: ["400", "500", "700"],
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-dancing-script",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -73,7 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} ${ubuntu.variable} ${josefinSans.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${ubuntu.variable} ${josefinSans.variable} ${dancingScript.variable} antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider>

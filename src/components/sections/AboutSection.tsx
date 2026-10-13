@@ -28,7 +28,7 @@ export default function AboutSection() {
           style={{
             fontSize: "clamp(90px, 16vw, 220px)",
             color: "transparent",
-            WebkitTextStroke: "1px rgba(192,0,255,0.08)",
+            WebkitTextStroke: "1px rgba(183,138,78,0.08)",
           }}
         >
           CREATIVE
@@ -39,7 +39,7 @@ export default function AboutSection() {
       <div
         className="absolute top-1/2 right-0 w-[500px] h-[500px] -translate-y-1/2 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(192,0,255,0.06) 0%, transparent 60%)",
+          background: "radial-gradient(circle, rgba(183,138,78,0.06) 0%, transparent 60%)",
           filter: "blur(40px)",
         }}
         aria-hidden="true"
@@ -60,7 +60,7 @@ export default function AboutSection() {
               <div
                 className="absolute -inset-2 rounded-3xl opacity-30"
                 style={{
-                  background: "linear-gradient(135deg, #c000ff, transparent, #7b00d4)",
+                  background: "linear-gradient(135deg, #B78A4E, transparent, #4D1211)",
                   padding: "1px",
                 }}
               />
@@ -68,7 +68,7 @@ export default function AboutSection() {
                 className="relative w-full h-full rounded-2xl overflow-hidden"
                 style={{
                   background: "linear-gradient(135deg, #0d0d0d 0%, #1a0020 50%, #0d0d0d 100%)",
-                  border: "1px solid rgba(192,0,255,0.15)",
+                  border: "1px solid rgba(183,138,78,0.15)",
                   boxShadow: "0 18px 55px rgba(15, 10, 24, 0.28)",
                 }}
               >
@@ -78,14 +78,14 @@ export default function AboutSection() {
                   <div
                     className="absolute top-1/4 left-1/2 -translate-x-1/2 w-28 h-28 rounded-full"
                     style={{
-                      background: "linear-gradient(135deg, rgba(192,0,255,0.3), rgba(123,0,212,0.2))",
-                      boxShadow: "0 0 60px rgba(192,0,255,0.3)",
+                      background: "linear-gradient(135deg, rgba(183,138,78,0.3), rgba(77,18,17,0.2))",
+                      boxShadow: "0 0 60px rgba(183,138,78,0.3)",
                     }}
                   />
                   <div
                     className="absolute top-[45%] left-1/2 -translate-x-1/2 w-36 h-44 rounded-t-full"
                     style={{
-                      background: "linear-gradient(180deg, rgba(192,0,255,0.2), rgba(123,0,212,0.1))",
+                      background: "linear-gradient(180deg, rgba(183,138,78,0.2), rgba(77,18,17,0.1))",
                     }}
                   />
                   {/* Name overlay */}
@@ -105,7 +105,7 @@ export default function AboutSection() {
                 <div
                   className="absolute inset-0 pointer-events-none"
                   style={{
-                    background: "radial-gradient(ellipse at 50% 30%, rgba(192,0,255,0.1) 0%, transparent 60%)",
+                    background: "radial-gradient(ellipse at 50% 30%, rgba(183,138,78,0.1) 0%, transparent 60%)",
                   }}
                 />
               </div>
@@ -114,8 +114,8 @@ export default function AboutSection() {
               <motion.div
                 className="absolute -bottom-4 -right-4 px-5 py-3 rounded-2xl"
                 style={{
-                  background: "linear-gradient(135deg, #c000ff, #7b00d4)",
-                  boxShadow: "0 10px 40px rgba(192,0,255,0.4)",
+                  background: "linear-gradient(135deg, #B78A4E, #4D1211)",
+                  boxShadow: "0 10px 40px rgba(183,138,78,0.4)",
                 }}
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -128,8 +128,8 @@ export default function AboutSection() {
               <motion.div
                 className="absolute -top-4 -left-4 w-8 h-8 rounded-full"
                 style={{
-                  background: "rgba(192,0,255,0.4)",
-                  boxShadow: "0 0 20px rgba(192,0,255,0.6)",
+                  background: "rgba(183,138,78,0.4)",
+                  boxShadow: "0 0 20px rgba(183,138,78,0.6)",
                 }}
                 animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -145,7 +145,7 @@ export default function AboutSection() {
           >
             <p
               className="text-xs tracking-[0.3em] uppercase mb-6"
-              style={{ color: "#c000ff" }}
+              style={{ color: "#B78A4E" }}
             >
               About Me
             </p>
@@ -195,13 +195,13 @@ export default function AboutSection() {
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
                   whileHover={{
-                    borderColor: "rgba(192,0,255,0.3)",
-                    boxShadow: "0 0 20px rgba(192,0,255,0.1)",
+                    borderColor: "rgba(183,138,78,0.3)",
+                    boxShadow: "0 0 20px rgba(183,138,78,0.1)",
                   }}
                 >
                   <p
                     className="font-black text-2xl mb-1"
-                    style={{ color: "#c000ff" }}
+                    style={{ color: "#B78A4E" }}
                   >
                     {step.number}
                   </p>

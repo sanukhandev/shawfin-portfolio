@@ -7,6 +7,11 @@ export function useScrollReveal(threshold = 0.15) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -18,7 +23,6 @@ export function useScrollReveal(threshold = 0.15) {
     );
 
     if (ref.current) observer.observe(ref.current);
-
     return () => observer.disconnect();
   }, [threshold]);
 
