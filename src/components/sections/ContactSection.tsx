@@ -237,16 +237,16 @@ export default function ContactSection() {
 
         <motion.div
           id="site-footer"
-          className="mt-24 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: "1px solid var(--card-border)" }}
+          className="editorial-footer-bar mt-24 px-6 sm:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderTop: "1px solid rgba(38,38,38,0.16)" }}
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <span className="footer-logo-frame"><BrandLogo tone="black" className="h-8 w-[150px] sm:w-[180px]" /></span>
+          <BrandLogo tone="black" className="h-8 w-[150px] sm:w-[180px]" />
           <p
             className="text-xs inline-flex items-center justify-center gap-1.5"
-            style={{ color: "var(--muted)" }}
+            style={{ color: "#000000" }}
           >
             <span>Made with</span>
             <Heart
@@ -257,7 +257,7 @@ export default function ContactSection() {
             />
             <span>by Sanu Khan © 2026</span>
           </p>
-          <p className="text-xs" style={{ color: "var(--muted)" }}>
+          <p className="text-xs" style={{ color: "#000000" }}>
             Creative Designer and Art Director
           </p>
         </motion.div>

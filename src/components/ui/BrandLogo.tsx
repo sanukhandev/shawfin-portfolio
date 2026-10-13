@@ -3,17 +3,14 @@ import { useId } from "react";
 type BrandLogoProps = {
   className?: string;
   isBrandHidden?: boolean;
-  tone?: "red" | "black";
+  tone?: "white" | "black";
 };
 
-/**
- * A single, continuous handwritten Shawfin.design wordmark.
- * The navbar uses Saffronaut red; the footer uses Nero black.
- */
+/** A continuous handwritten wordmark, with context-specific solid colours. */
 export default function BrandLogo({
   className,
   isBrandHidden = false,
-  tone = "red",
+  tone = "white",
 }: BrandLogoProps) {
   const titleId = useId();
 
@@ -33,7 +30,7 @@ export default function BrandLogo({
         fontSize="47"
         fontWeight="700"
         letterSpacing="-0.5"
-        fill={tone === "black" ? "#262626" : "#942B2B"}
+        fill={tone === "black" ? "#000000" : "#FFFFFF"}
         style={{ fontFamily: "var(--font-dancing-script), cursive" }}
       >
         {isBrandHidden ? "Shawfin" : "Shawfin.design"}

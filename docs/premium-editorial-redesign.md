@@ -55,3 +55,9 @@ Supplementary warm off-white `#F5EBDE` ensures legible text. Light-theme surface
 - Framer Motion animates progressive stroke reveal as users scroll; `scaleX` and stroke width gradually decrease to produce a subtle zoom-out effect without shortening the line vertically.
 - The ornament is aria-hidden, does not intercept pointer events, and remains fully visible without animation under `prefers-reduced-motion: reduce`.
 - The line follows a side-gutter track so it does not obscure calls to action or portfolio content.
+
+## Plain wordmark refinement
+
+- Navbar `Shawfin.design` is solid white `#FFFFFF` against the dark navigation shell.
+- Footer `Shawfin.design` is solid black `#000000`, on a full-width Tropical Tan footer bar for legibility.
+- Removed individual logo boxes, borders, and padding. The original Dancing Script wordmark remains unchanged.
