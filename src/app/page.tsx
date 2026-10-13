@@ -8,6 +8,7 @@ import SkillsSection from "@/components/sections/SkillsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <TestimonialsSection />
       <ClientsSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 }

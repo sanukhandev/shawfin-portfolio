@@ -61,3 +61,12 @@ Supplementary warm off-white `#F5EBDE` ensures legible text. Light-theme surface
 - Navbar `Shawfin.design` is solid white `#FFFFFF` against the dark navigation shell.
 - Footer `Shawfin.design` is solid black `#000000`, on a full-width Tropical Tan footer bar for legibility.
 - Removed individual logo boxes, borders, and padding. The original Dancing Script wordmark remains unchanged.
+
+## Full-width editorial footer
+
+- Extracted the footer into the reusable `src/components/layout/Footer.tsx` server component; the Contact section keeps its existing form and contact links.
+- The footer occupies the entire viewport width, independent of the contact form's `max-w-7xl` container.
+- A continuous Tropical Tan `#CBB291` brand strip retains the solid black handwritten wordmark without an individual logo box.
+- A deep Hull Red/Saffronaut red patterned panel presents the existing portfolio description, email, on-page navigation, and existing configured social destinations.
+- Credit remains “Made with ♥ by Sanu Khan © 2026”; a back-to-top link uses the existing hero `#top` anchor.
+- Kept `id="site-footer"` on the new semantic footer so the gold scroll ornament still ends above it.

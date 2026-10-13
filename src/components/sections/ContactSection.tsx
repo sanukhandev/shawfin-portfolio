@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import BrandLogo from "@/components/ui/BrandLogo";
-import { Send, Mail, Instagram, Linkedin, ExternalLink, Heart } from "lucide-react";
+import { Send, Mail, Instagram, Linkedin, ExternalLink } from "lucide-react";
 
 const socialLinks = [
   { icon: Mail, label: "Email", href: "mailto:hello@shawfin.design", handle: "hello@shawfin.design" },
@@ -235,32 +234,7 @@ export default function ContactSection() {
           </motion.div>
         </div>
 
-        <motion.div
-          id="site-footer"
-          className="editorial-footer-bar mt-24 px-6 sm:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: "1px solid rgba(38,38,38,0.16)" }}
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <BrandLogo tone="black" className="h-8 w-[150px] sm:w-[180px]" />
-          <p
-            className="text-xs inline-flex items-center justify-center gap-1.5"
-            style={{ color: "#000000" }}
-          >
-            <span>Made with</span>
-            <Heart
-              size={13}
-              fill="currentColor"
-              aria-label="love"
-              style={{ color: "#942B2B" }}
-            />
-            <span>by Sanu Khan © 2026</span>
-          </p>
-          <p className="text-xs" style={{ color: "#000000" }}>
-            Creative Designer and Art Director
-          </p>
-        </motion.div>
+
       </div>
     </section>
   );

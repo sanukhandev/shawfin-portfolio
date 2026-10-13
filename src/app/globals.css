@@ -292,11 +292,6 @@
 .editorial-scroll-cue svg { transition: transform .25s; }
 .editorial-scroll-cue:hover svg { transform: translateY(4px); }
 
-/* Solid handwritten wordmarks without individual backgrounds or borders. */
-.editorial-footer-bar {
-  background: #CBB291;
-  color: #000000;
-}
 
 /* AVAILABILITY / CREATIVE PHILOSOPHY EDITORIAL SPLIT */
 .availability-quote-section {
@@ -511,4 +506,186 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .golden-thread svg { transform: none !important; }
+}
+
+
+/* FULL BLEED / RED PATTERNED FOOTER */
+.shawfin-footer {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+.shawfin-footer-container {
+  width: min(1440px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 76px);
+}
+.shawfin-footer-signature {
+  background: #CBB291;
+  color: #262626;
+  border-top: 1px solid rgba(77,18,17,.2);
+}
+.shawfin-footer-signature-inner {
+  min-height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.shawfin-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.shawfin-footer-brand svg { display: block; }
+.shawfin-footer-signature-label {
+  color: #4D1211;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  text-align: right;
+}
+.shawfin-footer-red {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(148,43,43,.63), transparent 55%),
+    linear-gradient(135deg, #4D1211 0%, #641B1A 54%, #4D1211 100%);
+  color: #F5EBDE;
+  overflow: hidden;
+}
+.shawfin-footer-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: .28;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 280' width='360' height='280'%3E%3Cg fill='none' stroke='%23B78A4E' stroke-width='1.2' opacity='.4' stroke-linecap='round'%3E%3Cpath d='M-32 48 C35 0 82 100 162 53 S281 8 386 56'/%3E%3Cpath d='M-36 108 C33 60 92 161 166 116 S289 73 392 116'/%3E%3Cpath d='M-24 172 C42 117 88 223 168 173 S292 129 398 182'/%3E%3Cpath d='M-42 239 C36 188 88 289 163 243 S296 197 385 249'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 360px 280px;
+}
+.shawfin-footer-body,
+.shawfin-footer-bottom { position: relative; z-index: 1; }
+.shawfin-footer-body {
+  display: grid;
+  grid-template-columns: minmax(0,1.7fr) minmax(150px,.6fr) minmax(150px,.7fr);
+  gap: clamp(28px, 6vw, 110px);
+  padding-block: clamp(62px, 7.5vw, 120px);
+}
+.shawfin-footer-intro { max-width: 540px; }
+.shawfin-footer-eyebrow {
+  display: block;
+  color: #CBB291;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.shawfin-footer-message {
+  color: #F5EBDE;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 700;
+  font-size: clamp(27px, 3.8vw, 51px);
+  letter-spacing: -.055em;
+  line-height: 1.13;
+  text-wrap: balance;
+  margin: 0 0 32px;
+}
+.shawfin-footer-email {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  border-bottom: 1px solid #CBB291;
+  color: #CBB291;
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-weight: 500;
+  padding-bottom: 9px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color .2s ease, gap .2s ease;
+}
+.shawfin-footer-email:hover { color: #F5EBDE; gap: 17px; }
+.shawfin-footer-heading {
+  color: #CBB291;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin: 4px 0 25px;
+}
+.shawfin-footer-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+}
+.shawfin-footer-links a,
+.shawfin-footer-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #F5EBDE;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  font-weight: 450;
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+.shawfin-footer-links a:hover,
+.shawfin-footer-top:hover { color: #CBB291; transform: translateX(3px); }
+.shawfin-footer-bottom {
+  border-top: 1px solid rgba(203,178,145,.28);
+  padding-block: 25px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.shawfin-footer-credit {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  color: #F5EBDE;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  letter-spacing: .015em;
+}
+.shawfin-footer-credit svg { color: #CBB291; }
+.shawfin-footer-top {
+  color: #CBB291;
+  font-size: 12px;
+  letter-spacing: .06em;
+}
+@media (max-width: 767px) {
+  .shawfin-footer-signature-inner {
+    min-height: 118px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+  .shawfin-footer-signature-label { text-align: left; font-size: 10px; }
+  .shawfin-footer-body {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 45px 25px;
+    padding-block: 64px;
+  }
+  .shawfin-footer-intro { grid-column: 1 / -1; }
+  .shawfin-footer-message { max-width: 450px; }
+  .shawfin-footer-links a { font-size: 14px; }
+}
+@media (max-width: 365px) {
+  .shawfin-footer-body { grid-template-columns: 1fr; }
+  .shawfin-footer-intro { grid-column: auto; }
 }
