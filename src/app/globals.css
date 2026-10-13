@@ -351,7 +351,7 @@
   border-radius: 50%;
   box-shadow: 0 0 0 6px rgba(148,43,43,.12);
 }
-.portfolio-page .availability-quote-section h2 {
+.portfolio-page section.availability-quote-section .availability-heading-line h2 {
   color: #262626;
   font-family: var(--font-space-grotesk), sans-serif;
   font-size: clamp(37px,4.1vw,68px);
@@ -422,7 +422,7 @@
 @media (max-width: 767px) {
   .availability-quote-grid { grid-template-columns: minmax(0,1fr); }
   .availability-panel,.philosophy-panel { min-height: 350px; padding: 43px 7%; gap: 52px; }
-  .portfolio-page .availability-quote-section h2 { font-size: clamp(37px,9vw,56px); }
+  .portfolio-page section.availability-quote-section .availability-heading-line h2 { font-size: clamp(37px,9vw,56px); }
   .philosophy-figure blockquote { font-size: clamp(43px,10vw,68px); }
   .philosophy-ornament { top: -75px; }
 }
@@ -477,6 +477,7 @@
   .portfolio-page section:not(.editorial-hero) h2 { letter-spacing: -.06em; }
 }
 @media (max-width: 389px) {
+  .editorial-navbar .brand-logo-frame { padding: 4px 5px; }
   .editorial-hero-title { font-size: 69px; }
   .editorial-hero-actions { gap: 9px; }
   .editorial-button { padding: 14px 17px; font-size: 13px; gap: 9px; }
