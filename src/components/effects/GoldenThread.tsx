@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
 type ThreadBounds = { top: number; height: number };
@@ -58,16 +58,26 @@ export default function GoldenThread() {
     };
   }, []);
 
-  const path = [
-    "M 35 0",
-    "C 84 46, 110 109, 44 166",
-    "S 14 240, 78 290",
-    "C 126 341, 7 388, 48 455",
-    "S 110 552, 54 615",
-    "C 10 674, 91 716, 74 772",
-    "C 48 830, 9 874, 69 922",
-    "S 102 977, 54 1000",
-  ].join(" ");
+  // Draw curls at a consistent physical rhythm, rather than stretching
+  // a short path across an arbitrarily long page.
+  const path = useMemo(() => {
+    const height = Math.max(1, bounds.height);
+    const count = Math.max(1, Math.ceil(height / 460));
+    const step = height / count;
+    const round = (value: number) => Math.round(value * 10) / 10;
+    let d = "M 56 0";
+
+    for (let i = 0; i < count; i += 1) {
+      const y = i * step;
+      const side = i % 2 === 0;
+      const first = side ? 111 : 9;
+      const second = side ? 12 : 108;
+      d += ` C ${first} ${round(y + step * 0.13)}, ${first} ${round(y + step * 0.34)}, 56 ${round(y + step * 0.52)}`;
+      d += ` C ${second} ${round(y + step * 0.69)}, ${second} ${round(y + step * 0.88)}, 56 ${round(y + step)}`;
+    }
+
+    return d;
+  }, [bounds.height]);
 
   return (
     <div
@@ -81,7 +91,7 @@ export default function GoldenThread() {
       }}
     >
       <motion.svg
-        viewBox="0 0 120 1000"
+        viewBox={`0 0 120 ${Math.max(1, bounds.height)}`}
         preserveAspectRatio="none"
         style={{ scaleX: reducedMotion ? 1 : zoomX }}
         focusable="false"
