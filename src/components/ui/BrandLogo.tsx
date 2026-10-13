@@ -3,17 +3,18 @@ import { useId } from "react";
 type BrandLogoProps = {
   className?: string;
   isBrandHidden?: boolean;
+  tone?: "red" | "black";
 };
 
 /**
- * A continuous handwritten wordmark. The Nero-to-gold gradient
- * is defined here once and reused by the header and footer.
+ * A single, continuous handwritten Shawfin.design wordmark.
+ * The navbar uses Saffronaut red; the footer uses Nero black.
  */
 export default function BrandLogo({
   className,
   isBrandHidden = false,
+  tone = "red",
 }: BrandLogoProps) {
-  const gradientId = useId();
   const titleId = useId();
 
   return (
@@ -26,29 +27,14 @@ export default function BrandLogo({
       preserveAspectRatio="xMinYMid meet"
     >
       <title id={titleId}>{isBrandHidden ? "Shawfin" : "Shawfin.design"}</title>
-      <defs>
-        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#CBB291" />
-          <stop offset="30%" stopColor="#B78A4E" />
-          <stop offset="58%" stopColor="#262626" />
-          <stop offset="82%" stopColor="#B78A4E" />
-          <stop offset="100%" stopColor="#CBB291" />
-        </linearGradient>
-      </defs>
       <text
         x="4"
         y="43"
         fontSize="47"
         fontWeight="700"
         letterSpacing="-0.5"
-        fill={`url(#${gradientId})`}
-        stroke="#CBB291"
-        strokeOpacity="0.36"
-        strokeWidth="0.65"
-        paintOrder="stroke"
-        style={{
-          fontFamily: "var(--font-dancing-script), cursive",
-        }}
+        fill={tone === "black" ? "#262626" : "#942B2B"}
+        style={{ fontFamily: "var(--font-dancing-script), cursive" }}
       >
         {isBrandHidden ? "Shawfin" : "Shawfin.design"}
       </text>

@@ -213,16 +213,8 @@
   align-items: center; gap: min(5vw,75px);
 }
 .editorial-hero-content { position: relative; z-index: 4; }
-.editorial-hero-status {
-  display: inline-flex; align-items: center; gap: 13px;
-  border: 1px solid rgba(203,178,145,.35);
-  border-radius: 2px; padding: 11px 15px;
-  font-size: 11px; font-weight: 650; letter-spacing: .16em; text-transform: uppercase;
-  color: #CBB291;
-}
-.editorial-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #B78A4E; box-shadow: 0 0 0 4px rgba(183,138,78,.16); }
 .editorial-hero-title {
-  margin: 20px 0 0;
+  margin: 0;
   font-family: var(--font-space-grotesk), sans-serif;
   font-size: clamp(88px, 10.4vw, 180px);
   font-weight: 700; line-height: .84; letter-spacing: -.095em;
@@ -299,6 +291,141 @@
 .editorial-scroll-cue { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
 .editorial-scroll-cue svg { transition: transform .25s; }
 .editorial-scroll-cue:hover svg { transform: translateY(4px); }
+
+/* LOCATION-SPECIFIC WORDMARK COLOURS */
+.brand-logo-frame,
+.footer-logo-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #CBB291;
+  border: 1px solid rgba(183,138,78,.5);
+  border-radius: 5px;
+  padding: 5px 10px;
+  line-height: 0;
+  flex-shrink: 0;
+}
+.brand-logo-frame { box-shadow: 0 3px 12px rgba(0,0,0,.1); }
+.footer-logo-frame { border-color: rgba(38,38,38,.14); }
+
+/* AVAILABILITY / CREATIVE PHILOSOPHY EDITORIAL SPLIT */
+.availability-quote-section {
+  width: 100%;
+  overflow: hidden;
+}
+.availability-quote-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  min-height: 450px;
+}
+.availability-panel,
+.philosophy-panel {
+  min-width: 0;
+  padding: clamp(35px,5.2vw,88px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 45px;
+}
+.availability-panel { color: #262626; background: #CBB291; }
+.philosophy-panel { color: #F5EBDE; background: #4D1211; }
+.availability-kicker,
+.philosophy-kicker {
+  display: block;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.availability-kicker { color: #4D1211; }
+.philosophy-kicker { color: #CBB291; }
+.availability-body { max-width: 530px; }
+.availability-heading-line { display: flex; align-items: flex-start; gap: 18px; }
+.availability-indicator {
+  width: 11px;
+  height: 11px;
+  margin-top: 18px;
+  flex-shrink: 0;
+  background: #942B2B;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(148,43,43,.12);
+}
+.portfolio-page .availability-quote-section h2 {
+  color: #262626;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: clamp(37px,4.1vw,68px);
+  line-height: 1.03;
+  letter-spacing: -.055em;
+  font-weight: 700;
+  text-transform: none;
+  margin: 0;
+}
+.availability-heading-line h2 span { display: block; color: #942B2B; }
+.availability-body p {
+  margin: 23px 0 28px 29px;
+  color: #4D362C;
+  max-width: 420px;
+  line-height: 1.7;
+  font-size: clamp(14px,1.1vw,17px);
+}
+.availability-link {
+  width: max-content;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 29px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #942B2B;
+  color: #4D1211;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap .2s ease;
+}
+.availability-link:hover { gap: 18px; }
+.philosophy-figure { margin: 0; position: relative; }
+.philosophy-ornament {
+  display: block;
+  position: absolute;
+  top: -85px;
+  left: -17px;
+  color: rgba(203,178,145,.18);
+  font-family: Georgia, serif;
+  font-size: 150px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.philosophy-figure blockquote {
+  position: relative;
+  max-width: 560px;
+  color: #F5EBDE;
+  font-family: var(--font-dancing-script), cursive;
+  font-size: clamp(39px,4.5vw,73px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.philosophy-figure figcaption {
+  margin-top: 27px;
+  color: #CBB291;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .availability-quote-grid { grid-template-columns: minmax(0,1fr); }
+  .availability-panel,.philosophy-panel { min-height: 350px; padding: 43px 7%; gap: 52px; }
+  .portfolio-page .availability-quote-section h2 { font-size: clamp(37px,9vw,56px); }
+  .philosophy-figure blockquote { font-size: clamp(43px,10vw,68px); }
+  .philosophy-ornament { top: -75px; }
+}
 
 /* GALLERY AND CONTENT */
 .editorial-capsules article { border: 1px solid rgba(203,178,145,.30); }

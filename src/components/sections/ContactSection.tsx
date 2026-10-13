@@ -242,7 +242,7 @@ export default function ContactSection() {
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <BrandLogo className="h-8 w-[150px] sm:w-[180px]" />
+          <span className="footer-logo-frame"><BrandLogo tone="black" className="h-8 w-[150px] sm:w-[180px]" /></span>
           <p
             className="text-xs inline-flex items-center justify-center gap-1.5"
             style={{ color: "var(--muted)" }}

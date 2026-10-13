@@ -47,16 +47,6 @@ export default function HeroSection() {
 
       <div className="editorial-hero-layout">
         <div className="editorial-hero-content">
-          <motion.div
-            className="editorial-hero-status"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65 }}
-          >
-            <span className="editorial-status-dot" aria-hidden="true" />
-            Available for Projects 2026
-          </motion.div>
-
           <motion.h1
             className="editorial-hero-title"
             initial={{ opacity: 0, y: 35 }}

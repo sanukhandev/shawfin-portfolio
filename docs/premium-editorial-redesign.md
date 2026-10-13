@@ -40,3 +40,10 @@ Supplementary warm off-white `#F5EBDE` ensures legible text. Light-theme surface
 3. Confirm keyboard navigation, focus indicators, mobile menu, and section anchors.
 4. Check media loading and portrait/logo treatments.
 5. Run `npm install`, `npx tsc --noEmit`, `npx eslint .`, and `npm run build` in a networked environment.
+
+## Availability and quote revision
+
+- The hero availability capsule is removed; a dedicated 50/50 availability/quote band now follows the hero, stacking on narrow screens.
+- Availability retains the existing 2026 message and collaboration description.
+- The handwritten quote “Good design is as little design as possible.” is credited to Dieter Rams, from [Vitsœ's publication of his Ten Principles for Good Design](https://www.vitsoe.com/us/about/good-design).
+- The shared `BrandLogo` accepts a `tone` prop: navbar uses Saffronaut red `#942B2B` and footer uses Nero `#262626`, both on Tropical Tan `#CBB291` for contrast.

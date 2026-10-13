@@ -55,7 +55,7 @@ export default function Navbar() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <BrandLogo className="h-8 w-[150px] sm:w-[180px]" />
+            <span className="brand-logo-frame"><BrandLogo tone="red" className="h-8 w-[150px] sm:w-[180px]" /></span>
           </motion.a>
 
           {/* Desktop Nav */}
