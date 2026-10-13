@@ -487,3 +487,39 @@
   .mesh-bg { animation: none; }
   .editorial-button:hover { transform: none; }
 }
+
+
+/*
+ * A single, gold, hand-drawn scrolling thread from the base of the hero
+ * to the contact section's footer divider. JavaScript measures the
+ * exact boundary, while these rules keep it decorative and responsive.
+ */
+.golden-thread {
+  position: absolute;
+  right: clamp(4px, 3vw, 50px);
+  width: clamp(62px, 10vw, 170px);
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  overflow: visible;
+  opacity: .78;
+  filter: drop-shadow(0 0 5px rgba(183, 138, 78, .24));
+  contain: layout style;
+}
+.golden-thread svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  transform-origin: center top;
+}
+@media (max-width: 767px) {
+  .golden-thread {
+    right: 3px;
+    width: 64px;
+    opacity: .54;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .golden-thread svg { transform: none !important; }
+}

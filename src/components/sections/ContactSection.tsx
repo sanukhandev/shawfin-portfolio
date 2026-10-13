@@ -236,6 +236,7 @@ export default function ContactSection() {
         </div>
 
         <motion.div
+          id="site-footer"
           className="mt-24 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderTop: "1px solid var(--card-border)" }}
           initial={{ opacity: 0 }}

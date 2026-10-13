@@ -47,3 +47,11 @@ Supplementary warm off-white `#F5EBDE` ensures legible text. Light-theme surface
 - Availability retains the existing 2026 message and collaboration description.
 - The handwritten quote “Good design is as little design as possible.” is credited to Dieter Rams, from [Vitsœ's publication of his Ten Principles for Good Design](https://www.vitsoe.com/us/about/good-design).
 - The shared `BrandLogo` accepts a `tone` prop: navbar uses Saffronaut red `#942B2B` and footer uses Nero `#262626`, both on Tropical Tan `#CBB291` for contrast.
+
+## Gold storytelling thread
+
+- A continuous, fine, hand-drawn gold SVG curl extends from the base of the hero to the top edge of the contact footer (`#site-footer`).
+- Its height is measured using `ResizeObserver`, so it adapts to responsive layouts, content height, and font loading without assuming a fixed page length.
+- Framer Motion animates progressive stroke reveal as users scroll; `scaleX` and stroke width gradually decrease to produce a subtle zoom-out effect without shortening the line vertically.
+- The ornament is aria-hidden, does not intercept pointer events, and remains fully visible without animation under `prefers-reduced-motion: reduce`.
+- The line follows a side-gutter track so it does not obscure calls to action or portfolio content.

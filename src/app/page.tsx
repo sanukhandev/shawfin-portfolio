@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
+import GoldenThread from "@/components/effects/GoldenThread";
 import ContentsShowcase from "@/components/sections/ContentsShowcase";
 import AvailabilityQuoteSection from "@/components/sections/AvailabilityQuoteSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -18,6 +19,7 @@ export default function Home() {
       </div>
 
       <HeroSection />
+      <GoldenThread />
       <AvailabilityQuoteSection />
       <ContentsShowcase />
       <AboutSection />
