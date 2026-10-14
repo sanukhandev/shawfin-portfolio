@@ -2,7 +2,7 @@
 export const SITE_NAME = "Shawfin";
 export const SITE_TAGLINE = "Creative Designer & Art Director";
 export const SITE_DESCRIPTION =
-  "Designing visuals that help brands scale, connect, and stand out.";
+  "Thoughtful branding, packaging, digital experiences, and motion—designed to help your business communicate clearly and stand out with purpose.";
 export const SITE_EMAIL = "hello@shawfin.design";
 
 export const NAV_LINKS = [

@@ -18,16 +18,15 @@ export default function AvailabilityQuoteSection() {
             <div className="availability-heading-line">
               <span className="availability-indicator" aria-hidden="true" />
               <h2 id="availability-heading">
-                Available for
-                <span>Projects 2026</span>
+                Let’s create
+                <span>something distinctive.</span>
               </h2>
             </div>
             <p>
-              Open for freelance commissions, launch collaborations, and long-form
-              brand partnerships with ambitious teams.
+              Available for selected projects in 2026. Whether you’re launching a brand, refining an identity, or creating a digital experience, let’s give your next idea a clear, compelling visual direction.
             </p>
             <a href="#contact" className="availability-link">
-              Let&apos;s collaborate <ArrowUpRight size={17} aria-hidden="true" />
+              Discuss your project <ArrowUpRight size={17} aria-hidden="true" />
             </a>
           </div>
         </div>
