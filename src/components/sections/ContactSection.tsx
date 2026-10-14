@@ -4,27 +4,34 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Send, Mail, Instagram, Linkedin, ExternalLink } from "lucide-react";
+import { SITE_EMAIL, SOCIAL_LINKS } from "@/lib/constants";
 
 const socialLinks = [
-  { icon: Mail, label: "Email", href: "mailto:hello@shawfin.design", handle: "hello@shawfin.design" },
-  { icon: Instagram, label: "Instagram", href: "#", handle: "@shawfin.design" },
-  { icon: Linkedin, label: "LinkedIn", href: "#", handle: "Shawfin" },
-  { icon: ExternalLink, label: "Behance", href: "#", handle: "behance.net/shawfin" },
-  { icon: ExternalLink, label: "Dribbble", href: "#", handle: "dribbble.com/shawfin" },
+  { icon: Mail, label: "Email", href: `mailto:${SITE_EMAIL}`, handle: SITE_EMAIL },
+  { icon: Instagram, label: "Instagram", href: SOCIAL_LINKS.instagram, handle: "@shawfin.design" },
+  { icon: Linkedin, label: "LinkedIn", href: SOCIAL_LINKS.linkedin, handle: "Shawfin" },
+  { icon: ExternalLink, label: "Behance", href: SOCIAL_LINKS.behance, handle: "behance.net/shawfin" },
+  { icon: ExternalLink, label: "Dribbble", href: SOCIAL_LINKS.dribbble, handle: "dribbble.com/shawfin" },
 ];
 
 export default function ContactSection() {
   const [formState, setFormState] = useState({ name: "", email: "", project: "", message: "" });
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [draftReady, setDraftReady] = useState(false);
   const { ref, isVisible } = useScrollReveal();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSending(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setSending(false);
-    setSent(true);
+    const subject = `Project enquiry — ${formState.project || "Creative collaboration"}`;
+    const body = [
+      `Name: ${formState.name}`,
+      `Email: ${formState.email}`,
+      `Project type: ${formState.project || "Not specified"}`,
+      "",
+      formState.message,
+    ].join("\n");
+    // A mail draft is honest about delivery: this site has no form API yet.
+    window.location.href = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setDraftReady(true);
   };
 
   return (
@@ -54,9 +61,9 @@ export default function ContactSection() {
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            Let&apos;s create
+            Let&apos;s build
             <br />
-            <span className="text-gradient-magenta">something unforgettable</span>
+            <span className="text-gradient-magenta">something worth remembering.</span>
           </motion.h2>
         </div>
 
@@ -67,7 +74,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8, delay: 0.15 }}
           >
             <p className="text-lg leading-relaxed mb-10 max-w-md" style={{ color: "var(--muted)" }}>
-              Open for freelance commissions, launch collaborations, and long-form brand partnerships with ambitious teams.
+              Tell me what you’re building, what you want to change, and what your audience needs to feel. Whether it’s a new identity, a digital experience, or a campaign, a thoughtful conversation is the best place to start.
             </p>
 
             <div className="space-y-4">
@@ -110,7 +117,7 @@ export default function ContactSection() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.22 }}
           >
-            {sent ? (
+            {draftReady ? (
               <motion.div
                 className="h-full min-h-[420px] flex flex-col items-center justify-center text-center"
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -126,11 +133,13 @@ export default function ContactSection() {
                   <Send size={30} className="text-white" />
                 </motion.div>
                 <h3 className="font-black text-3xl mb-3" style={{ color: "var(--foreground)" }}>
-                  Message Sent
+                  Your Email Draft Is Ready
                 </h3>
                 <p className="text-sm" style={{ color: "var(--muted)" }}>
-                  Thanks for reaching out. Response turnaround is usually under 24 hours.
+                  Your email application should open with your enquiry ready to review. Please press Send there to complete it—this website has not sent a message.
                 </p>
+                <a href={`mailto:${SITE_EMAIL}`} className="mt-6 text-sm underline" style={{ color: "var(--accent)" }}>Email {SITE_EMAIL} directly</a>
+                <button type="button" onClick={() => setDraftReady(false)} className="mt-4 text-sm underline" style={{ color: "var(--muted)" }}>Edit your enquiry</button>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -217,7 +226,6 @@ export default function ContactSection() {
 
                 <motion.button
                   type="submit"
-                  disabled={sending}
                   className="w-full flex items-center justify-center gap-3 py-4 rounded-2xl font-semibold text-sm text-white cursor-pointer disabled:opacity-70 gradient-sweep"
                   style={{
                     background: "linear-gradient(135deg, #B78A4E 0%, #942B2B 100%)",
@@ -226,8 +234,8 @@ export default function ContactSection() {
                   whileHover={{ y: -1, boxShadow: "0 20px 50px rgba(183,138,78,0.4)" }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  {sending ? "Sending..." : "Send Message"}
-                  {!sending && <Send size={15} />}
+                  Continue in Email App
+                  <Send size={15} aria-hidden="true" />
                 </motion.button>
               </form>
             )}

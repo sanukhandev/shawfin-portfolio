@@ -10,7 +10,7 @@ const projects = [
     id: "luxury-perfume",
     title: "Luxury Perfume Branding",
     category: "Branding",
-    summary: "Identity, packaging, and campaign language for a niche fragrance launch.",
+    summary: "A fragrance brand concept built around a distinctive identity, considered packaging, and a coherent launch aesthetic.",
     year: "2025",
     tags: ["Identity", "Packaging", "Campaign"],
     accent: "#B78A4E",
@@ -21,7 +21,7 @@ const projects = [
     id: "fashion-campaign",
     title: "Fashion Campaign Interface",
     category: "UI / UX",
-    summary: "Immersive lookbook commerce experience with editorial pacing and premium transitions.",
+    summary: "An editorial shopping experience that balances visual storytelling with a clear path from discovery to product.",
     year: "2025",
     tags: ["UI/UX", "Web", "Motion"],
     accent: "#B78A4E",
@@ -32,7 +32,7 @@ const projects = [
     id: "festival-id",
     title: "Festival Art Direction",
     category: "Art Direction",
-    summary: "Stage, digital, and social visuals built from one expressive visual system.",
+    summary: "A vibrant creative direction exploring how one visual language can adapt across events, print, and social media.",
     year: "2024",
     tags: ["Direction", "Print", "Social"],
     accent: "#942B2B",
@@ -43,7 +43,7 @@ const projects = [
     id: "mobile-ui",
     title: "Wellness Mobile Product",
     category: "Product Design",
-    summary: "A calm, tactile mobile interface balancing conversion goals with emotional clarity.",
+    summary: "A wellness app concept focused on welcoming interactions, approachable navigation, and clear next steps.",
     year: "2024",
     tags: ["Mobile", "UX", "Prototype"],
     accent: "#942B2B",
@@ -54,7 +54,7 @@ const projects = [
     id: "beverage-packaging",
     title: "Craft Beverage Packaging",
     category: "Packaging",
-    summary: "Collectible can and bottle architecture with cinematic shelf presence.",
+    summary: "A packaging exploration built to express personality, create shelf appeal, and feel cohesive across formats.",
     year: "2024",
     tags: ["Packaging", "Brand", "Print"],
     accent: "#4D1211",
@@ -65,7 +65,7 @@ const projects = [
     id: "social-motion",
     title: "Social Motion Suite",
     category: "Motion Design",
-    summary: "Performance-first short-form visuals with strong rhythm and visual recall.",
+    summary: "A collection of short-form motion concepts designed to communicate quickly and stay visually consistent.",
     year: "2025",
     tags: ["Motion", "Campaign", "Reels"],
     accent: "#B78A4E",
@@ -106,9 +106,9 @@ export default function ProjectsSection() {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              Featured
+              Selected
               <br />
-              <span className="text-gradient-magenta">Project Stories</span>
+              <span className="text-gradient-magenta">Creative Work</span>
             </motion.h2>
           </div>
           <motion.p
@@ -118,7 +118,7 @@ export default function ProjectsSection() {
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Visual-first case studies shaped with editorial hierarchy, premium depth, and controlled motion behavior.
+            A selection of creative work and concepts across branding, digital products, packaging, campaigns, and motion. Each explores a different challenge and visual direction.
           </motion.p>
         </div>
 
@@ -210,15 +210,16 @@ export default function ProjectsSection() {
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <motion.button
+          <motion.a
+            href="#contact"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-sm cursor-pointer glass-premium neuro-soft"
             style={{ color: "#B78A4E" }}
             whileHover={{ y: -2, boxShadow: "0 14px 36px rgba(183,138,78,0.2)" }}
             whileTap={{ scale: 0.98 }}
           >
-            View All Projects
-            <ArrowUpRight size={15} />
-          </motion.button>
+            Have a project in mind? Let&apos;s talk.
+            <ArrowUpRight size={15} aria-hidden="true" />
+          </motion.a>
         </motion.div>
       </div>
     </section>

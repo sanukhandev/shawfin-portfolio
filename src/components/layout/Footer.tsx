@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="shawfin-footer-pattern" aria-hidden="true" />
         <div className="shawfin-footer-container shawfin-footer-body">
           <div className="shawfin-footer-intro">
-            <span className="shawfin-footer-eyebrow">Shawfin.design / 2026</span>
+            <span className="shawfin-footer-eyebrow">Have a project in mind?</span>
             <p className="shawfin-footer-message">{SITE_DESCRIPTION}</p>
             <a className="shawfin-footer-email" href={`mailto:${SITE_EMAIL}`}>
               {SITE_EMAIL} <ArrowUpRight size={17} aria-hidden="true" />

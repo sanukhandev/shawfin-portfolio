@@ -78,9 +78,9 @@ export default function SkillsSection() {
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Capability
+            The Skills Behind
             <br />
-            <span className="text-gradient-magenta">Cloud</span>
+            <span className="text-gradient-magenta">the Creative Work</span>
           </motion.h2>
         </div>
 
@@ -94,6 +94,7 @@ export default function SkillsSection() {
             <button
               key={group.id}
               onClick={() => setActiveGroup(group.id)}
+              aria-pressed={activeGroup === group.id}
               className="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-[0.18em] cursor-pointer transition-all duration-300"
               style={{
                 color: activeGroup === group.id ? "white" : "var(--muted)",

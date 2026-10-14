@@ -77,7 +77,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.42 }}
           >
-            Designing visuals that help brands <strong>scale, connect,</strong> and <em>stand out.</em>
+            Designing visuals that help brands <strong>scale with confidence, connect with the right audience,</strong> and <em>stand out with purpose.</em> I bring brand identity, packaging, digital experiences, and motion together to create memorable work—from the first impression to the lasting connection.
           </motion.p>
 
           <motion.div
@@ -87,10 +87,10 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.6 }}
           >
             <a className="editorial-button editorial-button-primary" href="#projects">
-              View Projects <ArrowUpRight size={18} aria-hidden="true" />
+              Explore My Work <ArrowUpRight size={18} aria-hidden="true" />
             </a>
-            <a className="editorial-button editorial-button-secondary" href="#about">
-              About Me <ArrowUpRight size={18} aria-hidden="true" />
+            <a className="editorial-button editorial-button-secondary" href="#contact">
+              Start a Project <ArrowUpRight size={18} aria-hidden="true" />
             </a>
           </motion.div>
         </div>
@@ -112,7 +112,7 @@ export default function HeroSection() {
       </div>
 
       <div className="editorial-hero-bottom">
-        <span className="editorial-bottom-label">Creative Designer &amp; Art Director</span>
+        <span className="editorial-bottom-label">Brand Identity &amp; Digital Experiences</span>
         <a href="#showcase" className="editorial-scroll-cue">
           Scroll <ArrowDown size={15} aria-hidden="true" />
         </a>

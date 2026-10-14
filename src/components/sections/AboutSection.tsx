@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const processSteps = [
-  { number: "01", title: "Discover", desc: "Deep research into brand, audience, and market landscape." },
-  { number: "02", title: "Conceptualize", desc: "Craft unique concepts grounded in strategic thinking." },
-  { number: "03", title: "Design", desc: "Build immersive visual systems with intentional craft." },
-  { number: "04", title: "Refine", desc: "Iterate until every detail is precisely right." },
+  { number: "01", title: "Discover", desc: "Understand your business, audience, challenges, and what success should look like." },
+  { number: "02", title: "Define", desc: "Turn insights into a focused direction and a clear creative brief." },
+  { number: "03", title: "Design", desc: "Create considered identities, interfaces, packaging, or campaigns that work together." },
+  { number: "04", title: "Refine", desc: "Review, refine, and prepare each detail for practical use across touchpoints." },
 ];
 
 export default function AboutSection() {
@@ -120,8 +120,8 @@ export default function AboutSection() {
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                <p className="text-white font-black text-xl">5+</p>
-                <p className="text-white/80 text-xs">Years Crafting</p>
+                <p className="text-white font-black text-xl">Purpose</p>
+                <p className="text-white/80 text-xs">Before Pixels</p>
               </motion.div>
 
               {/* Corner decoration */}
@@ -157,29 +157,25 @@ export default function AboutSection() {
                 color: "var(--foreground)",
               }}
             >
-              Crafting Visual
+              Making Brands
               <br />
-              <span className="text-gradient-magenta">Experiences</span>
+              <span className="text-gradient-magenta">Clearer, Stronger,</span>
               <br />
-              That Resonate
+              More Memorable
             </h2>
 
             <p
               className="font-light leading-relaxed mb-8 text-lg"
               style={{ color: "var(--muted)" }}
             >
-              Shawfin is a multidisciplinary creative designer focused on crafting
-              visually immersive digital experiences, branding systems, packaging
-              concepts, and motion-driven storytelling for modern brands.
+              I’m Shawfin, a multidisciplinary creative designer working across brand identity, packaging, digital design, and art direction. My focus is simple: help you communicate what makes your brand valuable through a visual language that feels unmistakably yours.
             </p>
 
             <p
               className="font-light leading-relaxed mb-10"
               style={{ color: "var(--muted)" }}
             >
-              My philosophy: every pixel has purpose, every design tells a story.
-              I bridge the gap between strategy and aesthetics — ensuring that
-              beauty serves function and function serves business.
+              I start with your audience and business goals, then bring strategy and craft together. The result is more than a polished visual—it’s a consistent experience that helps people understand, recognise, and connect with your brand.
             </p>
 
             {/* Process steps */}

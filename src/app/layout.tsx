@@ -6,9 +6,9 @@ import Navbar from "@/components/layout/Navbar";
 import MouseGlow from "@/components/effects/MouseGlow";
 
 export const metadata: Metadata = {
-  title: "Shawfin — Creative Designer & Art Director",
+  title: "Shawfin | Brand Identity, Digital Design & Art Direction",
   description:
-    "Designing visuals that help brands scale, connect, and stand out. Multidisciplinary creative designer specializing in branding, UI/UX, packaging, and motion.",
+    "Work with Shawfin on memorable brand identities, packaging, digital experiences, and motion design. Creative direction that connects your business with the people who matter.",
   keywords: [
     "Shawfin",
     "Creative Designer",
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Shawfin" }],
   openGraph: {
-    title: "Shawfin — Creative Designer & Art Director",
-    description: "Designing visuals that help brands scale, connect, and stand out.",
+    title: "Shawfin | Brand Identity, Digital Design & Art Direction",
+    description: "Distinctive brand identities, thoughtful digital experiences, packaging, and art direction designed to communicate with clarity.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shawfin — Creative Designer & Art Director",
+    title: "Shawfin | Brand Identity, Digital Design & Art Direction",
   },
 };
 

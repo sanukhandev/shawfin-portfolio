@@ -8,7 +8,7 @@ const categories = [
   {
     id: "branding",
     label: "Branding",
-    description: "Identity systems crafted for recall, consistency, and premium perception.",
+    description: "Distinctive identities that express what makes your brand different—and keep it recognisable wherever it appears.",
     accent: "#B78A4E",
     image:
       "https://images.unsplash.com/photo-1620674156044-52b714665d46?auto=format&fit=crop&w=900&q=80",
@@ -16,7 +16,7 @@ const categories = [
   {
     id: "packaging",
     label: "Packaging",
-    description: "Packaging directions designed like collectible objects with tactile narrative.",
+    description: "Packaging that brings your story to life and makes the first interaction feel considered.",
     accent: "#B78A4E",
     image:
       "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?auto=format&fit=crop&w=900&q=80",
@@ -24,7 +24,7 @@ const categories = [
   {
     id: "uiux",
     label: "UI / UX",
-    description: "Interfaces with elegant hierarchy, motion rhythm, and measurable conversion focus.",
+    description: "Intuitive digital experiences that help people find what they need and take the next step confidently.",
     accent: "#942B2B",
     image:
       "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=900&q=80",
@@ -32,7 +32,7 @@ const categories = [
   {
     id: "motion",
     label: "Motion",
-    description: "Cinematic loops and transition systems that make campaigns feel alive.",
+    description: "Purposeful motion that adds personality, guides attention, and makes your message easier to remember.",
     accent: "#942B2B",
     image:
       "https://images.unsplash.com/photo-1604871000636-074fa5117945?auto=format&fit=crop&w=900&q=80",
@@ -40,7 +40,7 @@ const categories = [
   {
     id: "art",
     label: "Art Direction",
-    description: "Concept-first visual worlds across digital, print, social, and launch moments.",
+    description: "A cohesive creative direction across campaigns, content, digital channels, and print.",
     accent: "#4D1211",
     image:
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80",
@@ -77,9 +77,9 @@ export default function ContentsShowcase() {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          Capsule Showcase
+          Creative Services
           <br />
-          <span className="text-gradient-magenta">for Creative Direction</span>
+          <span className="text-gradient-magenta">for Every Brand Moment</span>
         </motion.h2>
       </div>
 
@@ -182,7 +182,7 @@ export default function ContentsShowcase() {
                       }}
                     >
                       <p className="text-[11px] uppercase tracking-[0.26em] mb-3" style={{ color: cat.accent }}>
-                        Creative Pillar
+                        What It Delivers
                       </p>
                       <p
                         className="text-[15px] leading-relaxed"
